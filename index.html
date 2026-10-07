@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Registro</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="tarjeta">
+  <h1>Tecnológico de Antioquia - Institución Universitaria</h1>
+  <h2>Mi primer formulario</h2>
+
+  <form id="formularioRegistro" novalidate>
+
+    <div class="fila">
+      <label for="tipoDocumento">Tipo de documento</label>
+      <select id="tipoDocumento" name="tipoDocumento">
+        <option value="">Seleccione...</option>
+        <option value="CC">Cédula de ciudadanía</option>
+        <option value="TI">Tarjeta de identidad</option>
+        <option value="CE">Cédula de extranjería</option>
+        <option value="PA">Pasaporte</option>
+      </select>
+    </div>
+
+    <div class="fila">
+      <label for="numeroDocumento">Número de documento</label>
+      <input type="text" id="numeroDocumento" name="numeroDocumento" inputmode="numeric">
+    </div>
+    <span class="mensaje-error" id="errorDocumento"></span>
+
+    <div class="fila">
+      <label for="nombres">Nombres</label>
+      <input type="text" id="nombres" name="nombres">
+    </div>
+    <span class="mensaje-error" id="errorNombres"></span>
+
+    <div class="fila">
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" name="apellidos">
+    </div>
+
+    <div class="fila">
+      <label for="direccion">Dirección</label>
+      <input type="text" id="direccion" name="direccion">
+    </div>
+
+    <div class="fila">
+      <label for="ciudad">Ciudad</label>
+      <select id="ciudad" name="ciudad">
+        <option value="">Seleccione...</option>
+        <option value="Medellin">Medellín</option>
+        <option value="Bogota">Bogotá</option>
+        <option value="Cali">Cali</option>
+        <option value="Barranquilla">Barranquilla</option>
+        <option value="Itagui">Itagüí</option>
+      </select>
+    </div>
+
+    <div class="fila">
+      <label for="fechaNacimiento">Fecha de nacimiento</label>
+      <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+    </div>
+
+    <div class="fila">
+      <label for="correo">Correo electrónico</label>
+      <input type="text" id="correo" name="correo" placeholder="ejemplo@correo.com">
+    </div>
+    <span class="mensaje-error" id="errorCorreo"></span>
+
+    <div class="fila">
+      <label for="celular">Celular</label>
+      <input type="text" id="celular" name="celular" inputmode="numeric">
+    </div>
+    <span class="mensaje-error" id="errorCelular"></span>
+
+    <div class="botones">
+      <button type="submit" id="btnGuardar">Guardar</button>
+      <button type="button" id="btnActualizar" disabled>Actualizar</button>
+      <button type="button" id="btnCancelar" disabled>Cancelar</button>
+    </div>
+
+    <div class="aviso" id="avisoExito"></div>
+  </form>
+
+  <div class="contenedor-tabla" id="contenedorTabla">
+    <h3>Registros guardados</h3>
+    <table id="tablaRegistros">
+      <thead>
+        <tr>
+          <th>Tipo doc.</th>
+          <th>Número</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Dirección</th>
+          <th>Ciudad</th>
+          <th>F. nacimiento</th>
+          <th>Correo</th>
+          <th>Celular</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoTabla"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
